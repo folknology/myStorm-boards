@@ -5,7 +5,7 @@ from amaranth.build import *
 from amaranth_boards.resources import *
 from amaranth.vendor.lattice_ice40 import LatticeICE40Platform
 
-__all__ = ["IceLogicDeckPlatform"]
+__all__ = ["IceLogicBusPlatform"]
 
 # Pinout definitions
 LED =" B7" #B7
@@ -24,7 +24,7 @@ MEZZA = UART + " L1 J3 L2 K3 L3 J4 K4 L4 J5 K5 K6 - - - - - - - - - - -" # Rx,Tx
 MEZZB = USER + " L10 - J9 K9 - - - - - - - - - - - - - - - - -"
 
 # IceLogicDeck : https://github.com/folknology/IceLogicDeck
-class IceLogicDeckPlatform(LatticeICE40Platform):
+class IceLogicBusPlatform(LatticeICE40Platform):
     device = "iCE40HX4K"
     package = "BG121"
     default_clk = "clk25"
@@ -84,4 +84,4 @@ class IceLogicDeckPlatform(LatticeICE40Platform):
 if __name__ == "__main__":
     #from .test.blinky import *
     from amaranth_boards.test.blinky import *
-    IceLogicDeckPlatform().build(Blinky(), do_program=True)
+    IceLogicBusPlatform().build(Blinky(), do_program=True)
