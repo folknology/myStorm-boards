@@ -85,8 +85,8 @@ set_io -nowarn  sck L10
 set_io -nowarn  ss L7
 
 # Uart
-#set_io -nowarn  tx K2
-#set_io -nowarn  rx J2
+#set_io -nowarn  tx L7
+#set_io -nowarn  rx K7
 
 # LED
 set_io -nowarn  led J11
