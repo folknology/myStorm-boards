@@ -12,8 +12,13 @@ __all__ = ["IceLogicBusPlatform"]
 LED =" J11" #B7
 RX = " K7"
 TX = " L7"
-SPI =" K9 J9 L10 L7" #si,so, sck,ss
-TILE1 = " F1 F2 F4 F3 G1 G2 G3 H3 H1 H2 J1 K1" #C
+SPI = " K9 J9 L10 L7" #si,so, sck,ss
+
+HYPERBUSDATA = " K3 K4 L1 K5 J3 L3 L4 J5"
+HYPERBUSCLK = " L2"
+HYPERBUSRD = " J4"
+HYPERBUSCS = " J2 K2" # HyperRam,Flash
+
 TILE2 = " K11 H10 J10 G8 H11 G10 D9 E11 G9 G11 F10 F9" #G
 TILE3= " B1 B2 C4 C3 C2 C1 E1 D1 D2 D3 E2 E3" #B
 TILE4 = " A9 C8 A8 C7 A6 A5 A2 A3 F11 E9 E10 E8" #F
@@ -27,8 +32,6 @@ BLADE4 = " D10 D11 C11 B11 A11 A10"
 GENPINS = " - - - - - - - -"
 # QSPIE = " J8 H7 K7 L8 H9 L7 J7" # qdo,qd1,qd2,qd3,qck,qss,qdr
 # TILE2 = " D10 D11 B11 C11 A10 A11 C9 B9 A7 B8 D5 B5"
-
-
 
 MEZZA = " L1 J3 L2 K3 L3 J4 K4 L4 J5 K5 K6 - - - - - - - - - - -" # Rx,Tx, DQ2,DQ4,DQK,DQ0,DQ5,DQR,DQ1,DQ6,DQ7,DQ3,DS0
 MEZZB = " L10 - J9 K9 - - - - - - - - - - - - - - - - -"
