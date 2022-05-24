@@ -14,6 +14,11 @@ RX = " K7"
 TX = " L7"
 SPI = " K9 J9 L10 L7" #si,so, sck,ss
 
+QSPIDATA = " J8 K9 K6 L5"
+QSPICK = " L10"
+QSPICS = " K10"
+QSPIDR = " J7"
+
 HYPERBUSDATA = " K3 K4 L1 K5 J3 L3 L4 J5"
 HYPERBUSCLK = " L2"
 HYPERBUSRD = " J4"
@@ -62,6 +67,13 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         # Resource("cs_n", 0, Pins("L7", dir="o"), Attrs(IO_STANDARD="SB_LVCMOS")),
         # Resource("cipo", 0, Pins("K9", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
         # QSPIE
+        Resource("qspi", 0,
+                 Subsignal("data", Pins(QSPIDATA, dir="io")),
+                 Subsignal("clk", Pins(QSPICK, dir="o")),
+                 Subsignal("rd", Pins(QSPICS, dir="io")),
+                 Subsignal("cs", Pins(QSPIDR, dir="o")),
+                 Attrs(io_standard="3.3-V LVTTL")),
+
         Resource("qd0", 0, Pins("J9", dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
         Resource("qd1", 0, Pins("K9", dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
         Resource("qd2", 0, Pins("K6",  dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
@@ -72,9 +84,9 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         # Hyperbus
         Resource("hyperbus", 0,
                  Subsignal("data", Pins(HYPERBUSDATA, dir="io")),
-                 Subsignal("hclk", Pins(HYPERBUSCLK, dir="o")),
-                 Subsignal("hrd", Pins(HYPERBUSRD, dir="io")),
-                 Subsignal("hsc", Pins(HYPERBUSCS, dir="o")),
+                 Subsignal("clk", Pins(HYPERBUSCLK, dir="o")),
+                 Subsignal("rd", Pins(HYPERBUSRD, dir="io")),
+                 Subsignal("cs", Pins(HYPERBUSCS, dir="o")),
                  Attrs(io_standard="3.3-V LVTTL")),
         # Uart
         UARTResource(0,
