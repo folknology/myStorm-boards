@@ -69,6 +69,13 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         Resource("qck", 0, Pins("L10", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
         Resource("qss", 0, Pins("K10", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
         Resource("qdr", 0, Pins("J7", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
+        # Hyperbus
+        Resource("hyperbus", 0,
+                 Subsignal("data", Pins(HYPERBUSDATA, dir="io")),
+                 Subsignal("hclk", Pins(HYPERBUSCLK, dir="o")),
+                 Subsignal("hrd", Pins(HYPERBUSRD, dir="io")),
+                 Subsignal("hsc", Pins(HYPERBUSCS, dir="o")),
+                 Attrs(io_standard="3.3-V LVTTL")),
         # Uart
         UARTResource(0,
                      rx="K7", tx="L7",
