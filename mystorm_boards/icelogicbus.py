@@ -3,15 +3,17 @@ import subprocess
 import serial
 import serial.tools.list_ports as lp
 
-from amaranth._toolchain import ToolNotFound
 from amaranth.build import *
 from amaranth_boards.resources import *
 from amaranth.vendor.lattice_ice40 import LatticeICE40Platform
 
 __all__ = ["IceLogicBusPlatform"]
 
+class PortNotFound(Exception):
+    pass
 # Pinout definitions
 LED =" J11" #B7
+RX = " K7"
 RX = " K7"
 TX = " L7"
 SPI = " K9 J9 L10 L7" #si,so, sck,ss
@@ -151,7 +153,7 @@ class IceLogicBusPlatform(LatticeICE40Platform):
             self.get_port()
             if self.upload_port is None:
                 # print("could not find a suitable device for upload port, cannot upload")
-                raise ToolNotFound("Platform '{}' could not find a suitable device for upload port, cannot upload"
+                raise PortNotFound("Platform '{}' could not find a suitable device for upload port, cannot upload"
                                           .format(type(self).__name__))
                 # return
             else:
