@@ -148,8 +148,10 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         if self.upload_port is None:
             self.get_port()
             if self.upload_port is None:
-                print("could not find a suitable device for upload port, cannot upload")
-                return
+                # print("could not find a suitable device for upload port, cannot upload")
+                raise NotImplementedError("Platform '{}' could not find a suitable device for upload port, cannot upload"
+                                          .format(type(self).__name__))
+                # return
             else:
                 print("Found device for uploading: ", self.upload_port.product + ' as device ' + self.upload_port.device)
 
