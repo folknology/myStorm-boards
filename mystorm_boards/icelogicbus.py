@@ -33,6 +33,21 @@ BLADE1 = " K7 L7 J7 H7 L8 J8"
 BLADE2 = " B3 A1 A4 B4 B5 D5"
 BLADE3 = " D7 B6 A7 B8 B9 C9"
 BLADE4 = " D10 D11 C11 B11 A11 A10"
+
+PMOD1A = " F1 F4 G1 G3 - -"
+PMOD1B = " F2 F3 G2 H3 - -"
+PMOD2A = " H1 J1 B1 C4 - -"
+PMOD2B = " H2 K1 B2 C3 - -"
+PMOD3A = " C2 E1 D2 E2 - -"
+PMOD3B = " C1 D1 D3 E3 - -"
+
+PMOD4A = " K11 J10 H11 D9 - -"
+PMOD4B = " H10 G8 G10 E11 - -"
+PMOD5A = " G9 F10 A9 A8 - -"
+PMOD5B = " G11 F9 C8 C7 - -"
+PMOD6A = " A6 A2 F11 E10 - -"
+PMOD6B = " A5 A3 E9 E8 - -"
+
 # USER = " J11 B6 D7 B7"
 # SUPER = " B4 A4 A1 B3 _ _ _ _"
 GENPINS = " - - - - - - - -"
@@ -115,6 +130,13 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         # Mezzanine Connectors
         Connector("mez", 0, MEZZA),  #
         Connector("mez", 1, MEZZB),  #
+
+        Connector("pmod", 0, PMOD1A + PMOD1B),  # PMOD1/2
+        Connector("pmod", 1, PMOD2A + PMOD2B),  # PMOD3/4
+        Connector("pmod", 2, PMOD3A + PMOD3B),  # PMOD5/6
+        Connector("pmod", 3, PMOD4A + PMOD4B),  # PMOD7/8
+        Connector("pmod", 4, PMOD5A + PMOD5B),  # PMOD9/10
+        Connector("pmod", 5, PMOD6A + PMOD6B),  # PMOD11/12
     ]
 
     def get_port(self):
