@@ -95,7 +95,7 @@ class IceLogicBusPlatform(LatticeICE40Platform):
                  Subsignal("clk", Pins(QSPICK, dir="o")),
                  Subsignal("rd", Pins(QSPICS, dir="io")),
                  Subsignal("cs", Pins(QSPIDR, dir="o")),
-                 Attrs(io_standard="3.3-V LVTTL")),
+                 Attrs(IO_STANDARD="3.3-V LVTTL")),
         # Old QSPI resource depreciated
         Resource("qd0", 0, Pins("J9", dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
         Resource("qd1", 0, Pins("K9", dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
