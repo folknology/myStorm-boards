@@ -21,7 +21,7 @@ RX = " K7"
 TX = " L7"
 SPI = " K9 J9 L10 L7" #si,so, sck,ss
 
-QSPIDATA = " J8 K9 K6 L5"
+QSPIDATA = " J9 K9 K6 L5"
 QSPICK = " L10"
 QSPICS = " K10"
 QSPIDR = " J7"
