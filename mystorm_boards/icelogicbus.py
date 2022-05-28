@@ -24,7 +24,7 @@ SPI = " K9 J9 L10 L7" #si,so, sck,ss
 QSPIDATA = " J9 K9 K6 L5"
 QSPICK = " L10"
 QSPICS = " K10"
-QSPIDR = " J7"
+QSPIDR = " J11"
 
 HYPERBUSDATA = " K3 K4 L1 K5 J3 L3 L4 J5"
 HYPERBUSCLK = " L2"
@@ -93,8 +93,8 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         Resource("qspi", 0,
                  Subsignal("data", Pins(QSPIDATA, dir="io")),
                  Subsignal("clk", Pins(QSPICK, dir="o")),
-                 Subsignal("rd", Pins(QSPICS, dir="io")),
-                 Subsignal("cs", Pins(QSPIDR, dir="o")),
+                 Subsignal("cs", Pins(QSPICS, dir="io")),
+                 Subsignal("dr", Pins(QSPIDR, dir="o")),
                  Attrs(IO_STANDARD="3.3-V LVTTL")),
         # Old QSPI resource depreciated
         Resource("qd0", 0, Pins("J9", dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
@@ -103,7 +103,7 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         Resource("qd3", 0, Pins("L5",  dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
         Resource("qck", 0, Pins("L10", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
         Resource("qss", 0, Pins("K10", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
-        Resource("qdr", 0, Pins("J7", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
+        Resource("qdr", 0, Pins("J11", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
         # Hyperbus
         Resource("hyperbus", 0,
                  Subsignal("data", Pins(HYPERBUSDATA, dir="io")),
