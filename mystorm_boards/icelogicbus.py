@@ -15,7 +15,7 @@ class PortNotFound(Exception):
 
 
 # Pinout definitions
-LED =" J11" #B7
+INT =" J11" #also ILB LED pin
 RX = " K7"
 RX = " K7"
 TX = " L7"
@@ -75,7 +75,10 @@ class IceLogicBusPlatform(LatticeICE40Platform):
                  Clock(25e6), Attrs(GLOBAL=True, IO_STANDARD="SB_LVCMOS")
                  ),
         # led
-        Resource("led", 0, Pins(LED, dir="o", invert=True),
+        Resource("led", 0, Pins(INT, dir="o", invert=True),
+                 Attrs(IO_STANDARD="SB_LVCMOS")
+                 ),
+        Resource("int", 0, Pins(INT, dir="o", invert=True),
                  Attrs(IO_STANDARD="SB_LVCMOS")
                  ),
         Resource("tx", 0, Pins(TX, dir="o"),
@@ -94,7 +97,6 @@ class IceLogicBusPlatform(LatticeICE40Platform):
                  Subsignal("data", Pins(QSPIDATA, dir="io")),
                  Subsignal("clk", Pins(QSPICK, dir="i")),
                  Subsignal("cs", Pins(QSPICS, dir="i")),
-                 Subsignal("dr", Pins(QSPIDR, dir="io")),
                  Attrs(IO_STANDARD="3.3-V LVTTL")),
         # Old QSPI resource depreciated
         Resource("qd0", 0, Pins("J9", dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
@@ -103,7 +105,6 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         Resource("qd3", 0, Pins("L5",  dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
         Resource("qck", 0, Pins("L10", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
         Resource("qss", 0, Pins("K10", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
-        Resource("qdr", 0, Pins("J11", dir="i"), Attrs(IO_STANDARD="SB_LVCMOS")),
         # Hyperbus
         Resource("hyperbus", 0,
                  Subsignal("data", Pins(HYPERBUSDATA, dir="io")),
