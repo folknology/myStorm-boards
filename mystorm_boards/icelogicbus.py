@@ -9,8 +9,11 @@ from amaranth.vendor.lattice_ice40 import LatticeICE40Platform
 
 __all__ = ["IceLogicBusPlatform"]
 
+
 class PortNotFound(Exception):
     pass
+
+
 # Pinout definitions
 LED =" J11" #B7
 RX = " K7"
@@ -107,7 +110,7 @@ class IceLogicBusPlatform(LatticeICE40Platform):
                  Subsignal("clk", Pins(HYPERBUSCLK, dir="o")),
                  Subsignal("rd", Pins(HYPERBUSRD, dir="io")),
                  Subsignal("cs", Pins(HYPERBUSCS, dir="o")),
-                 Attrs(io_standard="3.3-V LVTTL")),
+                 Attrs(IO_STANDARD="3.3-V LVTTL")),
         # Uart
         UARTResource(0,
                      rx="K7", tx="L7",
@@ -152,9 +155,9 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         if self.upload_port is None:
             self.get_port()
             if self.upload_port is None:
-                # print("could not find a suitable device for upload port, cannot upload")
-                raise PortNotFound("Platform '{}' could not find a suitable device for upload port, cannot upload"
+                raise PortNotFound("'{}' could not find a suitable device for upload port, cannot upload"
                                           .format(type(self).__name__))
+                # print("could not find a suitable device for upload port, cannot upload")
                 # return
             else:
                 print("Found device for uploading: ", self.upload_port.product + ' as device ' + self.upload_port.device)
