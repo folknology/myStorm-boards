@@ -92,9 +92,9 @@ class IceLogicBusPlatform(LatticeICE40Platform):
         # QSPIE
         Resource("qspi", 0,
                  Subsignal("data", Pins(QSPIDATA, dir="io")),
-                 Subsignal("clk", Pins(QSPICK, dir="o")),
-                 Subsignal("cs", Pins(QSPICS, dir="io")),
-                 Subsignal("dr", Pins(QSPIDR, dir="o")),
+                 Subsignal("clk", Pins(QSPICK, dir="i")),
+                 Subsignal("cs", Pins(QSPICS, dir="i")),
+                 Subsignal("dr", Pins(QSPIDR, dir="io")),
                  Attrs(IO_STANDARD="3.3-V LVTTL")),
         # Old QSPI resource depreciated
         Resource("qd0", 0, Pins("J9", dir="io"), Attrs(IO_STANDARD="SB_LVCMOS")),
