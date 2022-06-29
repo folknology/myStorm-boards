@@ -65,28 +65,28 @@ set_io -nowarn  blade1[4] L8
 set_io -nowarn  blade1[5] J8
 
 # BLADE 2
-set_io -nowarn  blade1[0] B3
-set_io -nowarn  blade1[1] A1
-set_io -nowarn  blade1[2] A4
-set_io -nowarn  blade1[3] B4
-set_io -nowarn  blade1[4] B5
-set_io -nowarn  blade1[5] D5
+set_io -nowarn  blade2[0] B3
+set_io -nowarn  blade2[1] A1
+set_io -nowarn  blade2[2] A4
+set_io -nowarn  blade2[3] B4
+set_io -nowarn  blade2[4] B5
+set_io -nowarn  blade2[5] D5
 
 # BLADE 3
-set_io -nowarn  blade1[0] D7
-set_io -nowarn  blade1[1] B6
-set_io -nowarn  blade1[2] A7
-set_io -nowarn  blade1[3] B8
-set_io -nowarn  blade1[4] B9
-set_io -nowarn  blade1[5] C9
+set_io -nowarn  blade3[0] D7
+set_io -nowarn  blade3[1] B6
+set_io -nowarn  blade3[2] A7
+set_io -nowarn  blade3[3] B8
+set_io -nowarn  blade3[4] B9
+set_io -nowarn  blade3[5] C9
 
 # BLADE 4
-set_io -nowarn  blade1[0] D10
-set_io -nowarn  blade1[1] D11
-set_io -nowarn  blade1[2] C11
-set_io -nowarn  blade1[3] B11
-set_io -nowarn  blade1[4] A11
-set_io -nowarn  blade1[5] A10
+set_io -nowarn  blade4[0] D10
+set_io -nowarn  blade4[1] D11
+set_io -nowarn  blade4[2] C11
+set_io -nowarn  blade4[3] B11
+set_io -nowarn  blade4[4] A11
+set_io -nowarn  blade4[5] A10
 
 # HyperRam
 #set_io -nowarn  dq[0] K3
