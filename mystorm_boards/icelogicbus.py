@@ -15,7 +15,7 @@ class PortNotFound(Exception):
 
 
 # Pinout definitions
-INT =" J11" #also ILB LED pin
+INT =" J11" #also ILB Blue LED pin
 RX = " K7"
 RX = " K7"
 TX = " L7"
@@ -180,7 +180,7 @@ class IceLogicBusPlatform(LatticeICE40Platform):
     #             with open(products.extract("{}.bin".format(name))) as f:
     #                 ser.write(f.read())
 
-    def bus_send(self, bytes2send):
+    def get_upload_port(self):
         if self.upload_port is None:
             self.get_port()
             if self.upload_port is None:
@@ -189,8 +189,16 @@ class IceLogicBusPlatform(LatticeICE40Platform):
             else:
                 print("Found device for uploading: ", self.upload_port.product + ' as device ' + self.upload_port.device)
 
+    def bus_send(self, bytes2send):
+        self.get_upload_port()
         with serial.Serial(self.upload_port.device) as ser:
             ser.write(bytes2send)
+
+    def bus_fetch(self, comad, count):
+        self.get_upload_port()
+        with serial.Serial(self.upload_port.device) as ser:
+            ser.write(comad + count.to_bytes(4, "big"))
+            return ser.read(count)
 
 #bus_send(bytearray(b'\x00\xff'))
 

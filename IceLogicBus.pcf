@@ -56,6 +56,38 @@ set_io -nowarn  tile4[9] E9
 set_io -nowarn  tile4[10] E10
 set_io -nowarn  tile4[11] E8
 
+# BLADE 1
+set_io -nowarn  blade1[0] K7
+set_io -nowarn  blade1[1] L7
+set_io -nowarn  blade1[2] J7
+set_io -nowarn  blade1[3] H7
+set_io -nowarn  blade1[4] L8
+set_io -nowarn  blade1[5] J8
+
+# BLADE 2
+set_io -nowarn  blade1[0] B3
+set_io -nowarn  blade1[1] A1
+set_io -nowarn  blade1[2] A4
+set_io -nowarn  blade1[3] B4
+set_io -nowarn  blade1[4] B5
+set_io -nowarn  blade1[5] D5
+
+# BLADE 3
+set_io -nowarn  blade1[0] D7
+set_io -nowarn  blade1[1] B6
+set_io -nowarn  blade1[2] A7
+set_io -nowarn  blade1[3] B8
+set_io -nowarn  blade1[4] B9
+set_io -nowarn  blade1[5] C9
+
+# BLADE 4
+set_io -nowarn  blade1[0] D10
+set_io -nowarn  blade1[1] D11
+set_io -nowarn  blade1[2] C11
+set_io -nowarn  blade1[3] B11
+set_io -nowarn  blade1[4] A11
+set_io -nowarn  blade1[5] A10
+
 # HyperRam
 #set_io -nowarn  dq[0] K3
 #set_io -nowarn  dq[1] K4
