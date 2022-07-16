@@ -112,7 +112,7 @@ class IceLogicBusPlatform(LatticeICE40Platform):
                  Subsignal("clk", Pins(HYPERBUSCLK, dir="o")),
                  Subsignal("rd", Pins(HYPERBUSRD, dir="io")),
                  Subsignal("cs", Pins(HYPERBUSCS, dir="o")),
-                 Subsignal("cs", Pins(HYPERFLASHINT, dir="i")),
+                 Subsignal("int", Pins(HYPERFLASHINT, dir="i")),
                  Attrs(IO_STANDARD="3.3-V LVTTL")),
         # Uart
         UARTResource(0,
