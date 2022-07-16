@@ -116,7 +116,7 @@ set_io --warn-no-port hram_ck L2
 
 set_io --warn-no-port hram_cs_n[0] J2 # HyperRam
 set_io --warn-no-port hram_cs_n[1] K2 # HyperFlash
-set_io --warn-no-port hram_int_n H9 # HyperFlash
+set_io --warn-no-port hflsh_int_n H9 # HyperFlash
 
 #set_io --warn-no-port hram_rst_n handled by STM32 when programming Ice40
 
