@@ -30,6 +30,7 @@ HYPERBUSDATA = " K3 K4 L1 K5 J3 L3 L4 J5"
 HYPERBUSCLK = " L2"
 HYPERBUSRD = " J4"
 HYPERBUSCS = " J2 K2" # HyperRam,Flash
+HYPERFLASHINT = " H9"
 
 TILE1 = " F1 F2 F4 F3 G1 G2 G3 H3 H1 H2 J1 K1" #C
 TILE2 = " K11 H10 J10 G8 H11 G10 D9 E11 G9 G11 F10 F9" #G
@@ -111,6 +112,7 @@ class IceLogicBusPlatform(LatticeICE40Platform):
                  Subsignal("clk", Pins(HYPERBUSCLK, dir="o")),
                  Subsignal("rd", Pins(HYPERBUSRD, dir="io")),
                  Subsignal("cs", Pins(HYPERBUSCS, dir="o")),
+                 Subsignal("cs", Pins(HYPERFLASHINT, dir="i")),
                  Attrs(IO_STANDARD="3.3-V LVTTL")),
         # Uart
         UARTResource(0,
